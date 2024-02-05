@@ -20,7 +20,22 @@ struct ContentView: View {
                 Title()
                 
                 DeviceName()
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    RoundedRectangle(cornerRadius: 6)
+                        .fill(.yellow)
+                        .overlay {
+                            Text("SET TEMPERATURE")
+                                .font(.headline)
+                                .foregroundStyle(.black)
+                                .bold()
+                        }
+                })
+                .frame(height: 60)
+                .padding(.horizontal, 20)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.vertical, 50)
             
         }
         .ignoresSafeArea()
