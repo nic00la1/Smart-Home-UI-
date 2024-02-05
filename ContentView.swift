@@ -18,6 +18,15 @@ struct ContentView: View {
             AnimatedBackground()
             VStack {
                 Title()
+                DeviceMenuView(devices: devices) { value in
+                    
+                }
+                .frame(height: 80)
+                
+                
+                Spacer()
+                TemperatureControlSliderView()
+                Spacer()
                 
                 DeviceName()
                 
