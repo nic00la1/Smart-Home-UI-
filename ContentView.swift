@@ -16,7 +16,11 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             AnimatedBackground()
-            Title()
+            VStack {
+                Title()
+                
+                DeviceName()
+            }
             
         }
         .ignoresSafeArea()
@@ -48,6 +52,31 @@ struct ContentView: View {
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
         .padding(.horizontal)
+    }
+    
+    @ViewBuilder
+    func DeviceName() -> some View {
+        // UI is similar to title
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Samsung AC")
+                    .font(.system(size: 28))
+                    .foregroundStyle(.white)
+                    .bold()
+                Spacer()
+            }
+            
+            HStack {
+                Text("Connected")
+                    .font(.system(size: 15))
+                    .foregroundStyle(.yellow)
+                    .bold()
+                Spacer()
+            }
+        }
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+        .padding(.horizontal)
+        .padding(.bottom, 20)
     }
 }
 
